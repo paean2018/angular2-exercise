@@ -7,8 +7,15 @@ import { Component, Output, EventEmitter } from "@angular/core";
       <h1>Congratulations</h1>
       <h2>You stopped the child component's counter!</h2>
     </div>
-    <h1>Child Component: {{ counter }}</h1>
+    <h1 class="color-red">Child Component: {{ counter }}</h1>
   `,
+  styles: [
+    `
+      .color-red {
+        color: red;
+      }
+    `,
+  ],
 })
 export class ChildComponent {
   @Output() eventClick = new EventEmitter();
