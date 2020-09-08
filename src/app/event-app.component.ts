@@ -13,7 +13,7 @@ import { template } from "@angular/core/src/render3";
       <div style="margin-top:30px">Event: {{ event.name }}</div>
       <div>Date:{{ event.date }}</div>
       <div>Time:{{ event.time }}</div>
-      <div>Address:{{ event.location.address }}</div>
+      <event-address [address]="event.location.address"></event-address>
     </div>
   `,
 })
