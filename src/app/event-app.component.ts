@@ -11,9 +11,9 @@ import { template } from "@angular/core/src/render3";
       <h5>How does your event look below?</h5>
 
       <div style="margin-top:30px">Event: {{ event.name }}</div>
-      <div>Date:{{ event.data }}</div>
+      <div>Date:{{ event.date }}</div>
       <div>Time:{{ event.time }}</div>
-      <div>Address:{{ event.address }}</div>
+      <div>Address:{{ event.location.address }}</div>
     </div>
   `,
 })
