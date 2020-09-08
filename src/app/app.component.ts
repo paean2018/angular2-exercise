@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "app-root",
-  template: "<event-app> </event-app>",
+  template: "<parent> </parent>",
 })
 export class AppComponent {
   title = "ng-exercise";
