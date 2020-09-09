@@ -5,6 +5,13 @@ import { Component } from "@angular/core";
   templateUrl: "./events-list.component.html",
   styles: [
     `
+      button {
+        padding: 4px;
+        margin: -10px 0 0 10px;
+      }
+      h2 {
+        display: inline-block;
+      }
       .thumbnail {
         margin-top: 10px;
         padding-top: 5px;
@@ -33,14 +40,11 @@ export class EventsListComponent {
       name: "ng-conf 2037",
       date: "4/15/2037",
       time: "9am",
-      onlineUrl: "https://www.ng-conf.org/",
-    },
-    { name: "Future Conf (Location/Url TBD)", date: "6/10/2037", time: "8am" },
-    {
-      name: "ng-nl",
-      date: "4/15/2037",
-      time: "9am",
-      onlineUrl: "http://ng-nl.org/",
+      location: {
+        address: "The Palatial America Hotel",
+        city: "Salt Lake City",
+        country: "USA",
+      },
     },
     {
       name: "UN Angular Summit",
