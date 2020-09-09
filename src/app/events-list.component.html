@@ -1,18 +1,25 @@
 <div>
-  <div class="legend">
-    <span style="color: green">In Person</span>
-    <span style="color: red">Online</span> <span style="color: #aaa">TBD</span>
-  </div>
-  <div *ngFor="let event of events" class="well hoverwell thumbnail">
-    <h2 [ngStyle]="addStyle(event.format)">{{ event.name }}</h2>
-    <div>Date: {{ event.date }}</div>
-    <div>Time: {{ event.time }}</div>
-    <div *ngIf="event.location">
-      <span>Location: {{ event?.location?.address }}</span>
-      <span class="pad-left"
-        >{{ event?.location?.city }}, {{ event?.location?.country }}</span
-      >
-    </div>
-    <div *ngIf="event.onlineUrl">Online URL: {{ event?.onlineUrl }}</div>
-  </div>
+  <h3>All of the events should show below</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of events">
+        <td>{{ event.name }}</td>
+        <td>{{ event.date }}</td>
+        <td>{{ event.time }}</td>
+        <td>
+          {{ event.location.address }}, {{ event.location.city }},
+          {{ event.location.country }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
