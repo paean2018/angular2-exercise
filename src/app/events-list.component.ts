@@ -14,12 +14,6 @@ import { Component } from "@angular/core";
         margin-bottom: 10px;
         display: inline-block;
       }
-      .red {
-        color: red;
-      }
-      .green {
-        color: green;
-      }
     `,
   ],
 })
