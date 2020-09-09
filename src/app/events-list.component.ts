@@ -5,6 +5,9 @@ import { Component } from "@angular/core";
   templateUrl: "./events-list.component.html",
   styles: [
     `
+      .legend span {
+        padding-right: 30px;
+      }
       .thumbnail {
         margin-top: 10px;
         padding-top: 5px;
@@ -50,4 +53,14 @@ export class EventsListComponent {
       format: "InPerson",
     },
   ];
+
+  addStyle(format) {
+    if (format === "Online") {
+      return { color: "green" };
+    } else if (format === "InPerson") {
+      return { color: "red" };
+    } else {
+      return {};
+    }
+  }
 }
