@@ -5,24 +5,43 @@ import { Component } from "@angular/core";
   templateUrl: "./events-list.component.html",
   styles: [
     `
-      th,
-      td {
-        font-size: 16px;
-        padding: 5px 10px;
+      .thumbnail {
+        margin-top: 10px;
+        padding-top: 5px;
+      }
+      .label {
+        font-size: 14px;
+        margin-bottom: 10px;
+        display: inline-block;
       }
     `,
   ],
 })
 export class EventsListComponent {
   events = [
-    { name: "Angular Connect", date: "9/26/2036", time: "10am" },
+    {
+      name: "Angular Connect",
+      date: "9/26/2036",
+      time: "10am",
+      location: {
+        address: "1 London Road ",
+        city: "London",
+        country: "England",
+      },
+    },
+    {
+      name: "ng-conf 2037",
+      date: "4/15/2037",
+      time: "9am",
+      onlineUrl: "https://www.ng-conf.org/",
+    },
+    { name: "Future Conf (Location/Url TBD)", date: "6/10/2037", time: "8am" },
     {
       name: "ng-nl",
       date: "4/15/2037",
       time: "9am",
-      location: { address: "127 DT ", city: "Amsterdam", country: "NL" },
+      onlineUrl: "http://ng-nl.org/",
     },
-    { name: "ng-conf 2037", date: "4/15/2037", time: "9am" },
     {
       name: "UN Angular Summit",
       date: "6/10/2037",
@@ -32,6 +51,7 @@ export class EventsListComponent {
         city: "New York",
         country: "USA",
       },
+      onlineUrl: "http://unangularsummit.org",
     },
   ];
 }
