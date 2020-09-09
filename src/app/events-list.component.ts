@@ -5,6 +5,9 @@ import { Component } from "@angular/core";
   templateUrl: "./events-list.component.html",
   styles: [
     `
+      .legend span {
+        padding-right: 30px;
+      }
       .thumbnail {
         margin-top: 10px;
         padding-top: 5px;
@@ -13,12 +16,6 @@ import { Component } from "@angular/core";
         font-size: 14px;
         margin-bottom: 10px;
         display: inline-block;
-      }
-      .red {
-        color: red;
-      }
-      .green {
-        color: green;
       }
     `,
   ],
