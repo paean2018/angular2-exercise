@@ -2,11 +2,10 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
 import { AppComponent } from "./app.component";
-import { ParentComponent } from "./parent.component";
-import { ChildComponent } from "./child.component";
+import { EventsListComponent } from "./events-list.component";
 
 @NgModule({
-  declarations: [AppComponent, ParentComponent, ChildComponent],
+  declarations: [AppComponent, EventsListComponent],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
