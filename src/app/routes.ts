@@ -2,8 +2,14 @@ import { Routes } from "@angular/router";
 
 import { EventsListComponent } from "./events-list.component";
 import { EventDetailsComponent } from "./event-details.component";
+import { EventRouterActivator } from "./event-router-activator.service";
 
 export const appRoutes: Routes = [
-  { path: "", component: EventsListComponent },
-  { path: "events/:eventId", component: EventDetailsComponent },
+  { path: "events", component: EventsListComponent },
+  {
+    path: "events/:eventId",
+    component: EventDetailsComponent,
+    canActivate: [EventRouterActivator],
+  },
+  { path: "", redirectTo: "/events", pathMatch: "full" },
 ];

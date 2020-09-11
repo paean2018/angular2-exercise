@@ -7,11 +7,12 @@ import { EventsListComponent } from "./events-list.component";
 import { EventDetailsComponent } from "./event-details.component";
 import { EventService } from "./event.service";
 import { appRoutes } from "./routes";
+import { EventRouterActivator } from "./event-router-activator.service";
 
 @NgModule({
   imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
   declarations: [AppComponent, EventsListComponent, EventDetailsComponent],
-  providers: [EventService],
+  providers: [EventService, EventRouterActivator],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

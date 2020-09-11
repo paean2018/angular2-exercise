@@ -1,24 +1,22 @@
 import { Component } from "@angular/core";
 import { EventService } from "./event.service";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "event-details",
   template: `
     <h4>Event Details</h4>
     <div>
-      <div>{{ event.name }}</div>
-      <div>{{ event.date }}</div>
-      <div>{{ event.time }}</div>
+      <div>Event: {{ event?.name }}</div>
+      <div>Date: {{ event?.date }}</div>
+      <div>Time: {{ event?.time }}</div>
       <div>
-        {{ event.location.address }}, {{ event.location.city }},
-        {{ event.location.country }}
+        Address: {{ event?.location.address }}, {{ event?.location.city }},
+        {{ event?.location.country }}
       </div>
     </div>
     <div class="back">
-      <button class="btn btn-primary" (click)="handleBackBtn()">
-        Back to events
-      </button>
+      <a [routerLink]="['/events']">< Back to events</a>
     </div>
   `,
   styles: [
@@ -34,16 +32,11 @@ export class EventDetailsComponent {
 
   constructor(
     private eventService: EventService,
-    private activatedRoute: ActivatedRoute,
-    private router: Router
+    private activatedRoute: ActivatedRoute
   ) {}
   ngOnInit() {
     this.event = this.eventService.getEvent(
       +this.activatedRoute.snapshot.params["eventId"]
     );
-  }
-
-  handleBackBtn() {
-    this.router.navigate([""]);
   }
 }
