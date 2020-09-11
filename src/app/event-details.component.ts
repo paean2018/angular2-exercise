@@ -15,6 +15,9 @@ import { ActivatedRoute } from "@angular/router";
         {{ event?.location.country }}
       </div>
     </div>
+    <div class="pad-top">
+      <input type="checkbox" (click)="toggleCheckbox()" /> Reviewed
+    </div>
     <div class="back">
       <a [routerLink]="['/events']">< Back to events</a>
     </div>
@@ -29,7 +32,7 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class EventDetailsComponent {
   event: any;
-
+  isCheck: boolean = false;
   constructor(
     private eventService: EventService,
     private activatedRoute: ActivatedRoute
@@ -38,5 +41,9 @@ export class EventDetailsComponent {
     this.event = this.eventService.getEvent(
       +this.activatedRoute.snapshot.params["eventId"]
     );
+  }
+
+  toggleCheckbox() {
+    this.isCheck = !this.isCheck;
   }
 }

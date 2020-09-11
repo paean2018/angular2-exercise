@@ -12,7 +12,18 @@ import { EventRouterActivator } from "./event-router-activator.service";
 @NgModule({
   imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
   declarations: [AppComponent, EventsListComponent, EventDetailsComponent],
-  providers: [EventService, EventRouterActivator],
+  providers: [
+    EventService,
+    EventRouterActivator,
+    { provide: "canDeactivateViewEvent", useValue: checkToggle },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+export function checkToggle(component: EventDetailsComponent) {
+  if (!component.isCheck) {
+    return false;
+  }
+  return true;
+}
