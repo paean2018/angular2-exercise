@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+
 import { EventService } from "./event.service";
 
 @Component({
@@ -12,7 +13,7 @@ import { EventService } from "./event.service";
         padding: 5px 10px;
       }
       td a {
-        color: orange;
+        color: #df691a;
       }
     `,
   ],
